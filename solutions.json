@@ -1,0 +1,17 @@
+{
+	"sol.cpp": {
+		"verdict": "model_solution"
+	},
+	"ac.cpp": {
+		"verdict": "correct"
+	},
+	"wa+tle.cpp": {
+		"verdict": "0pts"
+	},
+	"tle.cpp": {
+		"verdict": "30pts, TLE in s2 and s3"
+	},
+	"no_longlong.cpp": {
+		"verdict": "30pts, s2 correct"
+	}
+}
