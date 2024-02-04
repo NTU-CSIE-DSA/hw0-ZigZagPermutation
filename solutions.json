@@ -6,12 +6,15 @@
 		"verdict": "correct"
 	},
 	"wa+tle.cpp": {
-		"verdict": "0pts"
+    "verdict": "incorrect",
+    "except": {"samples": "correct"}
 	},
 	"tle.cpp": {
-		"verdict": "30pts, TLE in s2 and s3"
+    "verdict": "time_limit",
+    "except": {"samples": "correct", "s1": "correct"}
 	},
 	"no_longlong.cpp": {
-		"verdict": "30pts, s2 correct"
+    "verdict": "incorrect",
+    "except": {"samples": "correct", "s2": "correct"}
 	}
 }
