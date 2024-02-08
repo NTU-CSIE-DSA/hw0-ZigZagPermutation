@@ -10,6 +10,15 @@ int main(int argc, char* argv[]) {
   int l = atoi(argv[2]);
   int r = atoi(argv[3]);
   assert(l <= r);
+  int x, y;
+  if(rnd.next(0, 1) == 0) {
+    x = l;
+    y = r;
+  }
+  else {
+    x = rnd.next(l, r);
+    y = rnd.next(l, r);
+  }
   printf("%d\n", n);
   int cnt = 0;
   for(int i = 0; i < n; i++) {
@@ -22,13 +31,13 @@ int main(int argc, char* argv[]) {
       }
     }
     if(type == 1) {
-      a[i] = l;
+      a[i] = x;
     }
     if(type == 2) {
-      a[i] = r;
+      a[i] = y;
     }
     printf("%d", a[i]);
-    if(i == n-1) printf("\n");
+    if(i == n - 1) printf("\n");
     else printf(" ");
   }
 }

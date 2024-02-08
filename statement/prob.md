@@ -90,3 +90,8 @@ No other constraints
 1
 7 49 7
 ```
+
+## Hint
+
+- Any sequence with a length of no more than two is considered 'beautiful.'
+- You may get TLE (Time Limit Exceeded) if you use brute force without a cut-off. In other words, you should stop searching if the current sequence is not beautiful.

@@ -33,6 +33,9 @@ gen2 10 -1000000000 1000000000 8
 gen2 10 -1000000000 1000000000 9
 gen2 10 -1000000000 1000000000 10
 manual manual1.in
+manual manual4.in
+manual manual5.in
+manual manual6.in
 
 @subtask s2
 @include samples
@@ -73,6 +76,9 @@ gen2 20 -10000 10000 8
 gen2 20 -10000 10000 9
 gen2 20 -10000 10000 10
 manual manual2.in
+manual manual4.in
+manual manual5.in
+manual manual6.in
 
 @subtask s3
 @include samples
