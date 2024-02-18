@@ -56,15 +56,12 @@ signed main() {
   }
 
   solve(0, n);
-  if(num == 0) cout << "-1\n";
-  else {
-    cout << num << '\n';
-    for(int i = 0; i < num; i++) {
-      for(int j = 0; j < n; j++) {
-        cout << ans[i][j] << ' ';
-      }
-      cout << '\n';
+  cout << num << '\n';
+  for(int i = 0; i < num; i++) {
+    for(int j = 0; j < n; j++) {
+      cout << ans[i][j] << ' ';
     }
+    cout << '\n';
   }
 
   return 0;

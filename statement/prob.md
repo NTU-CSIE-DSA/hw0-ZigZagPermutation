@@ -1,61 +1,45 @@
-## Description
+## Problem Description
 
-Given an array $a$ with $n$ numbers $a_1, a_2, \dots, a_n$ (possibly repeated), we say this array is `beautiful` if it satisfies the following condition:
+For an array $\textbf{a}$ with $N$ integers $\textbf{a}[1], \textbf{a}[2], \ldots, \textbf{a}[N]$, we say this array is **beautiful** if it satisfies the following condition: $$(\textbf{a}[i+1] - \textbf{a}[i])(\textbf{a}[i+2] - \textbf{a}[i+1]) < 0,\text{ for all }1 \leq n\leq N-2.$$
 
-$$(a_{i+1} - a_i)(a_{i + 2} - a_{i+1}) < 0 \text{, for all } 1 \leq i \leq n-2$$
+Consider the permutations of any given integer array $\textbf{a}$, please output all the **beautiful** permutations of $\textbf{a}$.
 
-Now, we can rearrange the elements in the array. Please output all the `beautiful` permutations of $a$.
+### Input
 
+The first line includes an integer $N$, representing the length of the array. The second line includes $N$ integers, representing the elements of the array $\textbf{a}[1], \textbf{a}[2], \ldots, \textbf{a}[N]$. All integers are separated by spaces. *Note that $\textbf{a}$ can contain repeated elements and is not guaranteed to be ordered.*
 
-## Input
+### Output
 
-The first line includes an integer $n$, representing the size of the array.
+In the first line, output a number $M$ that indicates the number of *different* **beautiful** permutations of $\textbf{a}$. Note that $M = 0$ if there is no such permutation.
 
-The second line includes $n$ numbers, representing the elements of the array.
+For each of the following $M$ lines, output the *different* **beautiful** permutations in lexicographical order, from the smallest to the largest. [Lexicographic order](https://en.wikipedia.org/wiki/Lexicographic_order) defines a length-$N$ array $\mathbf{p}$ to be smaller than another same-length array $\mathbf{q}$ if and only if $\mathbf{p}[n] < \mathbf{q}[n]$ for the first~$n$ in $1, 2, \ldots, N$ such that $\mathbf{p}[n] \neq \mathbf{q}[n]$. 
+The **beautiful** permutation should be outputted with $N$ integers, separated by spaces.
 
+### Constraints
 
-## Output
+- $1 \leq N \leq 20$
+- $-10^9 \leq \textbf{a}[n] \leq 10^9$ for every $n \in \{1, 2, \ldots, N\}$
+- The number of **beautiful** permutations ($M$) is no more than $2 \times 10^5$.
 
-In the first line, output the number of `beautiful` permutations. Repeated permutations should be considered the same.
+## Subtasks
+### Subtask 1 (10 pts)
+- $1 \le N \le 10$
 
-For the following lines, output all the `beautiful` permutations in lexicographical order, from smallest to largest. In other words, if the $k$-th output is $b_1, b_2, \dots, b_n$, and the $(k+1)$-th output is $c_1, c_2, \dots, c_n$, there exists an index $m$ such that:
+### Subtask 2 (20 pts)
+- $-10^4 \leq \textbf{a}[n] \leq 10^4$ for every $n \in \{1, 2, \ldots, N\}$
 
-- $b_i = c_i$ for all $1 \leq i \leq m-1$
-- $b_m > c_m$
-
-Each line of the output represents a `beautiful` permutation, and its elements are separated by spaces. If there is no such permutation, output `-1`.
-
-
-## Constraint
-
-- $1 \leq n \leq 20$
-- $-10^9 \leq a_i \leq 10^9$
-- The number of `beautiful` permutations is no more than $2 \times 10^5$
-
-### Subtask 1 (20pts)
-
-- $1 \leq n \leq 10$
-
-### Subtask 2 (30pts)
-
-- $-10000 \leq a_i \leq 10000$
-
-### Subtask 3 (40pts)
-
-No other constraints
-
+### Subtask 3 (20 pts)
+- no other constraints
 
 ## Sample Testcases
 
 ### Sample Input 1
-
 ```
 3
 3 2 1
 ```
 
 ### Sample Output 1
-
 ```
 4
 1 3 2
@@ -65,34 +49,42 @@ No other constraints
 ```
 
 ### Sample Input 2
-
 ```
 7
 7 7 7 7 7 14 49
 ```
 
 ### Sample Output 2
-
 ```
--1
+0
 ```
 
 ### Sample Input 3
-
 ```
 3
 7 7 49
 ```
 
 ### Sample Output 3
-
 ```
 1
 7 49 7
 ```
 
-## Hint
+### Sample Input 4
+```
+2
+1 2
+```
 
-- Any sequence with a length of no more than two is considered 'beautiful.'
-- You may get TLE (Time Limit Exceeded) if you use brute force without a cut-off. In other words, you should stop searching if the current sequence is not beautiful.
-- Remind to use long long.
+### Sample Output 4
+```
+2
+1 2
+2 1
+```
+
+## Hints
+- Any array with length $N \le 2$ satisfies all the beauty constraints and hence should be considered **beautiful**.
+- You may get TLE (Time Limit Exceeded) if you only enumerate every permutation in a brute-force manner without considering any cut-off. That is, you should try to stop spending time on permutations that are **not** beautiful.
+- While $\textbf{a}[n]$ does not exceed the range of 4-byte integers, their difference and multiplication may not stay within 4 bytes. So using some longer integer format such as `long long` can be helpful.

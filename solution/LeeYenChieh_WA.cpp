@@ -65,8 +65,6 @@ void find_all_zigzag(int level){
 signed main(void){
     init();
     find_all_zigzag(0);
-    if(zigzag_cnt == 0)
-        zigzag_cnt = -1;
     printf("%d\n", zigzag_cnt);
     for(int i = 0;i < zigzag_cnt;i++){
         for(int j = 0;j < n;j++)

@@ -1,7 +1,5 @@
-#include <bits/stdc++.h>
-#define int long long
-
-using namespace std;
+#include <stdio.h>
+#include <stdbool.h>
 
 int a[20];
 int ans[200000][20];
@@ -13,7 +11,7 @@ void solve(int idx, int n) {
   if(idx == n) {
     for(int i = 0; i < n; i++) {
       ans[num][i] = cur[i];
-      if(i >= 2 && ((cur[i] - cur[i - 1]) * (cur[i - 1] - cur[i - 2]) >= 0)) {
+      if(i >= 2 && ((long long) (cur[i] - cur[i - 1]) * (cur[i - 1] - cur[i - 2]) >= 0)) {
         return;
       }
     }
@@ -33,16 +31,13 @@ void solve(int idx, int n) {
   }
 }
 
-signed main() {
-
-  ios_base::sync_with_stdio(0);
-  cin.tie(0);
+int main() {
 
   int n;
-  cin >> n;
+  scanf("%d", &n);
 
   for(int i = 0; i < n; i++) {
-    cin >> a[i];
+    scanf("%d", &a[i]);
   }
   for(int i = 0; i < n; i++) {
     for(int j = 1; j < n; j++) {
@@ -55,16 +50,14 @@ signed main() {
   }
 
   solve(0, n);
-  if(num == 0) cout << "-1\n";
-  else {
-    cout << num << '\n';
-    for(int i = 0; i < num; i++) {
-      for(int j = 0; j < n; j++) {
-        cout << ans[i][j] << ' ';
-      }
-      cout << '\n';
+  printf("%d\n", num);
+  for(int i = 0; i < num; i++) {
+    for(int j = 0; j < n; j++) {
+      printf("%d ", ans[i][j]);
     }
+    printf("\n");
   }
 
   return 0;
 }
+

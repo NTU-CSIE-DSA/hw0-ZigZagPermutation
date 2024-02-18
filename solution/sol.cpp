@@ -49,15 +49,12 @@ int main() {
   }
 
   solve(0, n);
-  if(num == 0) printf("-1\n");
-  else {
-    printf("%d\n", num);
-    for(int i = 0; i < num; i++) {
-      for(int j = 0; j < n; j++) {
-        printf("%d ", ans[i][j]);
-      }
-      printf("\n");
+  printf("%d\n", num);
+  for(int i = 0; i < num; i++) {
+    for(int j = 0; j < n; j++) {
+      printf("%d ", ans[i][j]);
     }
+    printf("\n");
   }
 
   return 0;

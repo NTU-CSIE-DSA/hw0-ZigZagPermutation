@@ -8,19 +8,19 @@
 		},
 		"s1": {
 			"index": 1,
-			"score": 20,
+			"score": 10,
 			"text": "$1\\leq n \\leq 10",
 			"validators": ["val1.cpp"]
 		},
 		"s2": {
 			"index": 1,
-			"score": 30,
+			"score": 20,
 			"text": "$-10000\\leq a_i \\leq 10000",
 			"validators": ["val2.cpp"]
     },
 		"s3": {
 			"index": 2,
-			"score": 50,
+			"score": 20,
 			"text": "no other constraints"
 		}
 	}
